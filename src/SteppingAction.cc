@@ -1,3 +1,4 @@
+#include <G4MagneticField.hh>
 #include "SteppingAction.hh"
 
 // SLIC
@@ -11,6 +12,7 @@
 #include "G4SteppingManager.hh"
 #include "G4UserSteppingAction.hh"
 #include "G4Track.hh"
+#include "G4FieldManager.hh"
 
 namespace slic {
 
@@ -50,6 +52,22 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
     checkKillTrack(step);
 
     m_pluginManager->stepping(step);
+
+    G4StepPoint *point = step->GetPreStepPoint();
+    auto pos = point->GetPosition();
+    auto mom = point->GetMomentum();
+    G4FieldManager* globalFieldMgr = G4TransportationManager::GetTransportationManager()->GetFieldManager();
+    G4MagneticField *field = (G4MagneticField *)globalFieldMgr->GetDetectorField();
+    double position[3];
+    double bfield[3];
+    position[0] = pos.getX();
+    position[1] = pos.getY();
+    position[2] = pos.getZ();
+    field->GetFieldValue(position, bfield);
+    printf("Step: (%7.1f,%7.1f,%7.1f) ",pos.getX(),pos.getY(), pos.getZ());
+    printf("(%7.1f, %7.1f, %7.1f) ",mom.getX(),mom.getY(), mom.getZ());
+    printf("(%7.5f, %7.5f, %7.5f) \n", bfield[0]/CLHEP::tesla ,bfield[1]/CLHEP::tesla,bfield[2]/CLHEP::tesla);
+
 }
 
 void SteppingAction::checkKillTrack(const G4Step* aStep) {

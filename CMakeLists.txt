@@ -4,10 +4,9 @@
 # @author Jeremy McCormick <jeremym@slac.stanford.edu>   #
 #                                                        #
 ##########################################################
-
+set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
 # minimum version of CMake, which is determined by Geant4's requirements
 cmake_minimum_required(VERSION 3.8)
-
 project(SLIC VERSION 6.0.1)
 
 # minimum gcc version
@@ -38,6 +37,8 @@ if(APPLE)
     ENDIF("${isSystemDir}" STREQUAL "-1")
 endif(APPLE)
 
+
+
 # add path containing CMake macros for this project
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
@@ -51,6 +52,11 @@ add_custom_target(dependencies)
 # include macros to find or build external dependencies
 include(XercesC)
 include(Geant4)
+#add_subdirectory(geant4.git)
+#include_directories(${Geant4_INCLUDE_DIR})
+message(STATUS "G4Version: ${Geant4_VERSION}")
+message(STATUS "G4 Include: ${Geant4_INCLUDE_DIR}")
+message(STATUS "G4 Lib: ${Geant4_LIBRARIES}")
 include(HepPDT)
 include(LCIO)
 include(GDML)
@@ -105,6 +111,10 @@ install(FILES data/particle.tbl DESTINATION share PERMISSIONS OWNER_READ OWNER_W
 configure_file(${PROJECT_SOURCE_DIR}/include/PackageInfo.hh.in ${PROJECT_SOURCE_DIR}/include/PackageInfo.hh)
 
 message(STATUS "SLIC will be installed to: ${CMAKE_INSTALL_PREFIX}")
+
+message(STATUS "CMAKE_C_FLAGS = ${CMAKE_C_FLAGS}")
+message(STATUS "CMAKE_CXX_FLAGS = ${CMAKE_CXX_FLAGS}")
+message(STATUS "CMAKE_CXX_FLAGS_DEBUG = ${CMAKE_CXX_FLAGS_DEBUG}")
 
 # debug print link libraries
 message(DEBUG "libraries")

@@ -31,7 +31,7 @@ void LCOpticalPhysics::ConstructOp() {
     theBoundaryProcess = new G4OpBoundaryProcess();
 
     theCerenkovProcess->SetMaxNumPhotonsPerStep(300);
-    theScintillationProcess->SetScintillationYieldFactor(1.);
+//    theScintillationProcess->SetScintillationYieldFactor(1.);  // MWH: Removed in GEANT4 V11
 
 //if ( G4VERSION_NUMBER < 1000 )
 //	G4ParticleTable::G4PTblDicIterator* aParticleIterator = G4ParticleTable::GetParticleTable()->GetIterator();
