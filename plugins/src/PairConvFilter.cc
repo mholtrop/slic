@@ -97,7 +97,7 @@ void PairConvFilter::stepping(const G4Step *step) {
   }
 
   auto processName{(*secondaries)[0]->GetCreatorProcess()->GetProcessName()};
-  if (processName.compareTo("conv") == 0) {
+  if (processName == "conv") {
     hasPairConv_ = true;
     ++pairConvCount_; 
     std::cout << "[ PairConvFilter ]: "

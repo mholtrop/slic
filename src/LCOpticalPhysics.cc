@@ -19,10 +19,6 @@ void LCOpticalPhysics::ConstructProcess() {
     ConstructOp();
 }
 
-#ifndef aParticleIterator
-#define aParticleIterator ((subInstanceManager.offset[g4vpcInstanceID])._aParticleIterator)
-#endif
-
 void LCOpticalPhysics::ConstructOp() {
     theCerenkovProcess = new G4Cerenkov("Cerenkov");
     theScintillationProcess = new G4Scintillation("Scintillation");
@@ -31,16 +27,18 @@ void LCOpticalPhysics::ConstructOp() {
     theBoundaryProcess = new G4OpBoundaryProcess();
 
     theCerenkovProcess->SetMaxNumPhotonsPerStep(300);
+#if G4VERSION_NUMBER < 1100
+    // Removed in Geant4 11: the yield factor is now a material property
+    // (SCINTILLATIONYIELD), and the default of 1 is equivalent to this call.
     theScintillationProcess->SetScintillationYieldFactor(1.);
+#endif
 
-//if ( G4VERSION_NUMBER < 1000 )
-//	G4ParticleTable::G4PTblDicIterator* aParticleIterator = G4ParticleTable::GetParticleTable()->GetIterator();
-//#endif
-    aParticleIterator->reset();
+    auto particleIterator = GetParticleIterator();
+    particleIterator->reset();
 
-    while ((*aParticleIterator)()) {
+    while ((*particleIterator)()) {
 
-        G4ParticleDefinition* particle = aParticleIterator->value();
+        G4ParticleDefinition* particle = particleIterator->value();
         G4ProcessManager* pmanager = particle->GetProcessManager();
         G4String particleName = particle->GetParticleName();
 

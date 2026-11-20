@@ -20,6 +20,7 @@
 #include "G4TrackVector.hh"
 #include "G4VEmModel.hh"
 #include "G4VEmProcess.hh"
+#include "G4Version.hh"
 #include "G4VPhysicalVolume.hh"
 
 // LCIO
@@ -158,7 +159,13 @@ void ForcedPairConversionL2Upstream::stepping(const G4Step *step) {
   // Local conversion probability for this slab: 1 - exp(-t/lambda), with
   // 1/lambda given by the real cross section per unit volume. This is the
   // weight the event is worth once we force the conversion to happen here.
+#if G4VERSION_NUMBER >= 1110
+  // G4VEmProcess::CrossSectionPerVolume() was replaced by GetCrossSection()
+  // in Geant4 11.1; both return the macroscopic cross section (1/lambda).
+  const G4double sigma = conv->GetCrossSection(kinEnergy, couple);
+#else
   const G4double sigma = conv->CrossSectionPerVolume(kinEnergy, couple);
+#endif
   const G4double stepLength = step->GetStepLength();
   const G4double weight = 1.0 - std::exp(-sigma * stepLength);
 

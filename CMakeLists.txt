@@ -6,7 +6,7 @@
 ##########################################################
 
 # minimum version of CMake, which is determined by Geant4's requirements
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.16)
 
 project(SLIC VERSION 6.1.0)
 
@@ -17,10 +17,15 @@ endif()
 
 message(STATUS "SLIC will be installed to: ${CMAKE_INSTALL_PREFIX}")
 
+# Geant4 11 requires (and is built with) C++17
+set(CMAKE_CXX_STANDARD 17 CACHE STRING "C++ standard")
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 # minimum gcc version
-if(CMAKE_CXX_COMPILER_VERSION LESS 4.8)
-    message(FATAL_ERROR "The GCC version is too old (at least 4.8 is required).")
-ENDIF()
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 8)
+    message(FATAL_ERROR "The GCC version is too old (at least 8 is required for C++17).")
+endif()
 
 if(APPLE)
     # use, i.e. don't skip the full RPATH for the build tree

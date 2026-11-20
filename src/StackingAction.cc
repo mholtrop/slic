@@ -18,6 +18,7 @@ G4ClassificationOfNewTrack StackingAction::ClassifyNewTrack(const G4Track* aTrac
     G4ClassificationOfNewTrack classification = m_pluginManager->stackingClassifyNewTrack(aTrack);
     if (aTrack->GetTrackStatus() == fSuspend)
         classification = fWaiting;
+    return classification;
 }
 
 void StackingAction::NewStage() {

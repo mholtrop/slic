@@ -6,7 +6,7 @@ if(NOT LCIO_FOUND)
     externalproject_add(
         LCIO
         GIT_REPOSITORY   "https://github.com/iLCSoft/LCIO"
-        GIT_TAG          "v02-07-05"
+        GIT_TAG          "v02-23-04"
         GIT_SHALLOW      ON
         UPDATE_COMMAND   ""
         PATCH_COMMAND    ""

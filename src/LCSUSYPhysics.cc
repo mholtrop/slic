@@ -19,9 +19,6 @@ LCSUSYPhysics::LCSUSYPhysics(const G4String& name) :
 LCSUSYPhysics::~LCSUSYPhysics() {
 }
 
-#ifndef aParticleIterator
-#define aParticleIterator ((subInstanceManager.offset[g4vpcInstanceID])._aParticleIterator)
-#endif
 
 void LCSUSYPhysics::ConstructParticle() {
 
@@ -60,6 +57,7 @@ void LCSUSYPhysics::ConstructParticle() {
 }
 
 void LCSUSYPhysics::ConstructProcess() {
+    auto aParticleIterator = GetParticleIterator();
     aParticleIterator->reset();
     while ((*aParticleIterator)()) {
         G4ParticleDefinition* pdef = aParticleIterator->value();
