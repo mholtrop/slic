@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "em",
   8: "adefghilnostuvw",
   9: "lo",
-  10: "ad",
+  10: "d",
   11: "bcfilrst"
 };
 

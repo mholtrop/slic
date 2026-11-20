@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['aparticleiterator_0',['aParticleIterator',['../LCExtendedParticles_8cc.html#afbc8c18893a64a11db1d95ec55777e2d',1,'aParticleIterator:&#160;LCExtendedParticles.cc'],['../LCOpticalPhysics_8cc.html#afbc8c18893a64a11db1d95ec55777e2d',1,'aParticleIterator:&#160;LCOpticalPhysics.cc'],['../LCSUSYPhysics_8cc.html#afbc8c18893a64a11db1d95ec55777e2d',1,'aParticleIterator:&#160;LCSUSYPhysics.cc']]]
+  ['declare_5fplugin_0',['DECLARE_PLUGIN',['../UserActionPlugin_8hh.html#abd27940b4bffcb3bafd952c661dc6440',1,'UserActionPlugin.hh']]]
 ];

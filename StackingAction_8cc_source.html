@@ -104,29 +104,30 @@ $(function() {
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    G4ClassificationOfNewTrack classification = <a class="code hl_variable" href="classslic_1_1PluginManagerAccessor.html#a784e38547069d5d7642388f89ee42a31">m_pluginManager</a>-&gt;stackingClassifyNewTrack(aTrack);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">if</span> (aTrack-&gt;GetTrackStatus() == fSuspend)</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        classification = fWaiting;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">return</span> classification;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classslic_1_1StackingAction.html#a18cedcfaa9c24a31db3dc8ddc71b706e">   23</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classslic_1_1StackingAction.html#a18cedcfaa9c24a31db3dc8ddc71b706e">StackingAction::NewStage</a>() {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_variable" href="classslic_1_1PluginManagerAccessor.html#a784e38547069d5d7642388f89ee42a31">m_pluginManager</a>-&gt;stackingNewStage();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classslic_1_1StackingAction.html#a18cedcfaa9c24a31db3dc8ddc71b706e">   24</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classslic_1_1StackingAction.html#a18cedcfaa9c24a31db3dc8ddc71b706e">StackingAction::NewStage</a>() {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_variable" href="classslic_1_1PluginManagerAccessor.html#a784e38547069d5d7642388f89ee42a31">m_pluginManager</a>-&gt;stackingNewStage();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classslic_1_1StackingAction.html#a570c3ca7f6eb3aabb94cff39d394ccda">   27</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classslic_1_1StackingAction.html#a570c3ca7f6eb3aabb94cff39d394ccda">StackingAction::PrepareNewEvent</a>() {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_variable" href="classslic_1_1PluginManagerAccessor.html#a784e38547069d5d7642388f89ee42a31">m_pluginManager</a>-&gt;stackingPrepareNewEvent();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classslic_1_1StackingAction.html#a570c3ca7f6eb3aabb94cff39d394ccda">   28</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classslic_1_1StackingAction.html#a570c3ca7f6eb3aabb94cff39d394ccda">StackingAction::PrepareNewEvent</a>() {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_variable" href="classslic_1_1PluginManagerAccessor.html#a784e38547069d5d7642388f89ee42a31">m_pluginManager</a>-&gt;stackingPrepareNewEvent();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
 <div class="ttc" id="aStackingAction_8hh_html"><div class="ttname"><a href="StackingAction_8hh.html">StackingAction.hh</a></div></div>
 <div class="ttc" id="aclassslic_1_1PluginManagerAccessor_html_a784e38547069d5d7642388f89ee42a31"><div class="ttname"><a href="classslic_1_1PluginManagerAccessor.html#a784e38547069d5d7642388f89ee42a31">slic::PluginManagerAccessor::m_pluginManager</a></div><div class="ttdeci">PluginManager * m_pluginManager</div><div class="ttdef"><b>Definition</b> <a href="PluginManagerAccessor_8hh_source.html#l00045">PluginManagerAccessor.hh:45</a></div></div>
 <div class="ttc" id="aclassslic_1_1StackingAction_html_a1601e521be40841e0879676892cad42f"><div class="ttname"><a href="classslic_1_1StackingAction.html#a1601e521be40841e0879676892cad42f">slic::StackingAction::StackingAction</a></div><div class="ttdeci">StackingAction()</div><div class="ttdef"><b>Definition</b> <a href="#l00010">StackingAction.cc:10</a></div></div>
-<div class="ttc" id="aclassslic_1_1StackingAction_html_a18cedcfaa9c24a31db3dc8ddc71b706e"><div class="ttname"><a href="classslic_1_1StackingAction.html#a18cedcfaa9c24a31db3dc8ddc71b706e">slic::StackingAction::NewStage</a></div><div class="ttdeci">void NewStage()</div><div class="ttdef"><b>Definition</b> <a href="#l00023">StackingAction.cc:23</a></div></div>
+<div class="ttc" id="aclassslic_1_1StackingAction_html_a18cedcfaa9c24a31db3dc8ddc71b706e"><div class="ttname"><a href="classslic_1_1StackingAction.html#a18cedcfaa9c24a31db3dc8ddc71b706e">slic::StackingAction::NewStage</a></div><div class="ttdeci">void NewStage()</div><div class="ttdef"><b>Definition</b> <a href="#l00024">StackingAction.cc:24</a></div></div>
 <div class="ttc" id="aclassslic_1_1StackingAction_html_a280108d92b3b1efa8b94423d3effe8a0"><div class="ttname"><a href="classslic_1_1StackingAction.html#a280108d92b3b1efa8b94423d3effe8a0">slic::StackingAction::ClassifyNewTrack</a></div><div class="ttdeci">G4ClassificationOfNewTrack ClassifyNewTrack(const G4Track *aTrack)</div><div class="ttdef"><b>Definition</b> <a href="#l00016">StackingAction.cc:16</a></div></div>
 <div class="ttc" id="aclassslic_1_1StackingAction_html_a3acf6812fdc04747b82acb14671fea31"><div class="ttname"><a href="classslic_1_1StackingAction.html#a3acf6812fdc04747b82acb14671fea31">slic::StackingAction::~StackingAction</a></div><div class="ttdeci">virtual ~StackingAction()</div><div class="ttdef"><b>Definition</b> <a href="#l00013">StackingAction.cc:13</a></div></div>
-<div class="ttc" id="aclassslic_1_1StackingAction_html_a570c3ca7f6eb3aabb94cff39d394ccda"><div class="ttname"><a href="classslic_1_1StackingAction.html#a570c3ca7f6eb3aabb94cff39d394ccda">slic::StackingAction::PrepareNewEvent</a></div><div class="ttdeci">void PrepareNewEvent()</div><div class="ttdef"><b>Definition</b> <a href="#l00027">StackingAction.cc:27</a></div></div>
+<div class="ttc" id="aclassslic_1_1StackingAction_html_a570c3ca7f6eb3aabb94cff39d394ccda"><div class="ttname"><a href="classslic_1_1StackingAction.html#a570c3ca7f6eb3aabb94cff39d394ccda">slic::StackingAction::PrepareNewEvent</a></div><div class="ttdeci">void PrepareNewEvent()</div><div class="ttdef"><b>Definition</b> <a href="#l00028">StackingAction.cc:28</a></div></div>
 <div class="ttc" id="anamespaceslic_html"><div class="ttname"><a href="namespaceslic.html">slic</a></div><div class="ttdef"><b>Definition</b> <a href="CommandLineOption_8hh_source.html#l00009">CommandLineOption.hh:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
